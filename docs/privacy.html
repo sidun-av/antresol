@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Политика конфиденциальности — Lumen</title><meta name="description" content="Политика конфиденциальности приложения Lumen."><link rel="stylesheet" href="style.css"></head>
+<body><header><a class="brand" href="index.html">Lumen</a><nav><a href="install.html">Установка</a><a href="support.html">Поддержка</a><a href="privacy.html" aria-current="page">Конфиденциальность</a></nav></header>
+<main>
+<h1>Политика конфиденциальности приложения Lumen</h1>
+<p>Действует с 26 октября 2026 года.</p>
+<p>Lumen — приложение для iPhone, iPad и Mac, которое показывает и воспроизводит вашу собственную медиатеку: фильмы, сериалы, музыку, книги, комиксы и аудиокниги. Они хранятся на сервере Lumen, который вы (или администратор вашей семьи) устанавливаете на своём компьютере или NAS. Разработчик приложения не предоставляет контент и не держит серверов, через которые проходят ваши данные.</p>
+<h2>Коротко</h2>
+<ul>
+<li>Разработчик <strong>не собирает</strong> никаких данных: нет аналитики, рекламы, отслеживания, сторонних SDK и отчётов о сбоях, отправляемых разработчику.</li>
+<li>Приложение обменивается данными <strong>только с сервером, адрес которого вы ввели</strong>, и загружает обложки с общедоступных сайтов (см. ниже).</li>
+<li>Данные входа хранятся в <strong>связке ключей</strong> (Keychain) вашего устройства.</li>
+<li>Сохранённые для просмотра без сети файлы лежат <strong>только на вашем устройстве</strong> и удаляются вместе с приложением.</li>
+</ul>
+<h2>Какие данные обрабатываются и где</h2>
+<h3>На вашем сервере Lumen</h3>
+<p>Ваш сервер — это не сервер разработчика. Им управляет его администратор (обычно вы сами). Приложение передаёт на него:</p>
+<ul>
+<li>имя профиля и пароль при входе (пароль только проверяется и не хранится в приложении);</li>
+<li><strong>имя устройства</strong> — оно видно в списке устройств на сервере. Его можно изменить в поле «Имя устройства» при входе. На Mac по умолчанию это имя компьютера, в котором часто есть ваше имя;</li>
+<li>модель устройства (например, «iPhone17,3»), версию приложения и случайный идентификатор этой установки, чтобы сервер отличал ваши устройства;</li>
+<li>позицию просмотра, чтения и прослушивания, отметки «Просмотрено», «Хочу посмотреть», избранное и плейлисты;</li>
+<li>запросы на копии для сохранения на устройство.</li>
+</ul>
+<p>Всё это хранится на вашем сервере и подчиняется правилам его администратора. Разработчик к этим данным доступа не имеет.</p>
+<h3>На вашем устройстве</h3>
+<ul>
+<li><strong>Токен входа</strong> для каждого профиля — в связке ключей устройства. Он доступен только этому приложению и не переносится на другие устройства.</li>
+<li>Список серверов и профилей, настройки (тема чтения, качество видео, «Загружать только по Wi-Fi» и т. п.) и случайный идентификатор устройства — в настройках приложения.</li>
+<li>Файлы, сохранённые «На это устройство», кэш обложек и книг, очередь ещё не отправленных позиций — в контейнере приложения. Приложение проверяет свободное место, чтобы не переполнить устройство, и показывает его в разделе «На этом устройстве».</li>
+</ul>
+<p>При удалении приложения эти данные удаляются. На iPhone и iPad записи связки ключей могут пережить удаление приложения; они бесполезны без сервера и перезаписываются при следующем входе.</p>
+<h3>Обложки и описания со сторонних сайтов</h3>
+<p>Часть обложек и кадров ваш сервер указывает ссылками на общедоступные сайты: The Movie Database (TMDB), Cover Art Archive и Open Library. Приложение загружает такие изображения напрямую, <strong>без</strong> ваших данных входа. Эти сайты видят IP-адрес устройства и сам запрос изображения, как при открытии любой веб-страницы. На них действуют их собственные политики конфиденциальности.</p>
+<h2>Сеть и безопасность</h2>
+<ul>
+<li>Приложение подключается к адресу сервера, который вы ввели: в домашней сети или в интернете.</li>
+<li>В домашней сети iOS и macOS могут спросить разрешение на доступ к локальной сети. Оно нужно только для связи с вашим сервером.</li>
+<li>Если адрес вне дома начинается с <code>http://</code>, а не с <code>https://</code>, данные входа передаются без шифрования. Приложение об этом предупреждает. Для доступа из интернета используйте https или VPN (например, Tailscale).</li>
+</ul>
+<h2>Дети</h2>
+<p>Приложение не предназначено специально для детей и не собирает данных о них. Детские профили и ограничения по возрасту настраивает администратор вашего сервера.</p>
+<h2>Демо-сервер для проверки в App Store</h2>
+<p>Для проверки приложения Apple разработчик может держать демонстрационный сервер с открыто лицензированным контентом. Его журналы содержат только действия проверяющих и не используются ни для чего, кроме работы сервера.</p>
+<h2>Изменения и контакты</h2>
+<p>Если политика изменится, новая версия появится по этому же адресу с новой датой. Вопросы по конфиденциальности: через <a href="https://github.com/sidun-av/lumen/issues">GitHub Issues</a>.</p>
+<div class="en" id="en"><h2>Privacy policy (English)</h2>
+<p>Effective 26 October 2026. Lumen is an app for iPhone, iPad and Mac that browses and plays your own media library stored on a Lumen server that you (or your family's administrator) run. The developer provides no content and runs no servers your data passes through.</p>
+<ul>
+<li><strong>The developer collects no data.</strong> No analytics, advertising, tracking, third-party SDKs or crash reports sent to the developer.</li>
+<li>The app talks <strong>only to the server address you enter</strong>. It sends it your profile sign-in, the device name, model and app version, a random installation identifier, playback/reading positions, watched and favourite marks, playlists and requests for offline copies. That server is not the developer's; its administrator controls the data.</li>
+<li>Sign-in tokens are kept in the device <strong>Keychain</strong>. Settings, cached artwork and files saved for offline use stay in the app's container on the device and are removed with the app.</li>
+<li>Some artwork is loaded directly from public sites your server points to (The Movie Database, Cover Art Archive, Open Library) without any sign-in data; those sites see the device's IP address, as for any web page.</li>
+<li>The app is not directed at children and collects no data about them. Kid profiles and age limits are set by your server's administrator.</li>
+<li>Questions: <a href="https://github.com/sidun-av/lumen/issues">GitHub Issues</a>. Changes are published at this address with a new date.</li>
+</ul></div>
+</main>
+<footer>© 2026 Aleksandr Sidun · Lumen — приложение и сервер для вашей собственной медиатеки. Контент не предоставляется. · <a href="https://github.com/sidun-av/lumen/issues">Связаться</a></footer>
+</body></html>

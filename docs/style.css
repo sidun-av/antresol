@@ -1,0 +1,30 @@
+:root{--bg:#fbfbfd;--fg:#1d1d1f;--muted:#6e6e73;--line:#d2d2d7;--card:#fff;--accent:#5b4be8;--code:#f2f2f5}
+@media (prefers-color-scheme:dark){:root{--bg:#0b0b10;--fg:#f5f5f7;--muted:#a1a1a6;--line:#2c2c33;--card:#16161d;--accent:#9d8cff;--code:#1d1d26}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+header,main,footer{max-width:760px;margin:0 auto;padding:0 20px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;padding-bottom:22px;flex-wrap:wrap}
+.brand{font:700 22px/1 -apple-system,"SF Pro Display",sans-serif;letter-spacing:-.02em;color:var(--fg);text-decoration:none}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:15px}
+nav a:hover,nav a[aria-current]{color:var(--fg)}
+h1{font:700 clamp(32px,6vw,44px)/1.1 -apple-system,"SF Pro Display",sans-serif;letter-spacing:-.025em;margin:28px 0 12px}
+h2{font:600 24px/1.25 -apple-system,"SF Pro Display",sans-serif;letter-spacing:-.015em;margin:40px 0 10px}
+h3{font-size:18px;margin:26px 0 6px}
+p,li{color:var(--fg)}
+.lead{font-size:20px;color:var(--muted);margin-top:0}
+a{color:var(--accent)}
+code,pre{font:14px/1.5 ui-monospace,"SF Mono",Menlo,monospace;background:var(--code);border-radius:6px}
+code{padding:1px 5px}
+pre{padding:14px 16px;overflow-x:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:22px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.card h3{margin:0 0 4px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;border-radius:980px;padding:10px 20px;font-weight:600;margin:6px 10px 6px 0}
+.btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+.muted{color:var(--muted)}
+.en{border-top:1px solid var(--line);margin-top:48px;padding-top:8px}
+footer{color:var(--muted);font-size:14px;padding-top:40px;padding-bottom:40px}
