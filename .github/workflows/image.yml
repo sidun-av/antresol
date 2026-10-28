@@ -21,9 +21,9 @@ jobs:
           TAG: ${{ github.event.release.tag_name || inputs.tag }}
         run: |
           v=${TAG#v}
-          gh release download "$TAG" -p "lumen-server-$v-linux-*.tar.gz"
+          gh release download "$TAG" -p "antresol-server-$v-linux-*.tar.gz"
           for a in amd64 arm64; do
-            mkdir -p bin/$a && tar -xzf lumen-server-$v-linux-$a.tar.gz -C bin/$a --strip-components=1
+            mkdir -p bin/$a && tar -xzf antresol-server-$v-linux-$a.tar.gz -C bin/$a --strip-components=1
           done
           echo "VERSION=$v" >> "$GITHUB_ENV"
       - uses: docker/setup-qemu-action@v3
@@ -41,8 +41,8 @@ jobs:
           push: true
           labels: |
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
-            org.opencontainers.image.title=Lumen Server
-            org.opencontainers.image.description=Self-hosted home media server for the Lumen app
+            org.opencontainers.image.title=Antresol Server
+            org.opencontainers.image.description=Self-hosted home media server for the Antresol app
           tags: |
-            ghcr.io/sidun-av/lumen-server:${{ env.VERSION }}
-            ghcr.io/sidun-av/lumen-server:latest
+            ghcr.io/sidun-av/antresol-server:${{ env.VERSION }}
+            ghcr.io/sidun-av/antresol-server:latest

@@ -1,6 +1,6 @@
 # Third-party licences
 
-Lumen Server includes the following open-source Go modules. Modules under the Mozilla Public License 2.0 are used unmodified; their source code is available at the module path and version listed (https://pkg.go.dev/<module>@<version>).
+Antresol Server includes the following open-source Go modules. Modules under the Mozilla Public License 2.0 are used unmodified; their source code is available at the module path and version listed (https://pkg.go.dev/<module>@<version>).
 
 ## github.com/alecthomas/atomic v0.1.0-alpha2 (MIT)
 

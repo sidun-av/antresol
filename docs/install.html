@@ -1,22 +1,22 @@
 <!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Установка сервера — Lumen</title><meta name="description" content="Как установить сервер Lumen: Docker или готовый файл."><link rel="stylesheet" href="style.css"></head>
-<body><header><a class="brand" href="index.html">Lumen</a><nav><a href="install.html" aria-current="page">Установка</a><a href="support.html">Поддержка</a><a href="privacy.html">Конфиденциальность</a></nav></header>
+<title>Установка сервера — Antresol</title><meta name="description" content="Как установить сервер Antresol: Docker или готовый файл."><link rel="stylesheet" href="style.css"></head>
+<body><header><a class="brand" href="index.html">Antresol</a><nav><a href="install.html" aria-current="page">Установка</a><a href="support.html">Поддержка</a><a href="privacy.html">Конфиденциальность</a></nav></header>
 <main>
 <h1>Установка сервера</h1>
-<p class="lead">Сервер Lumen — один исполняемый файл с веб-интерфейсом внутри. Нужен компьютер или NAS, который включён, когда вы смотрите, и <code>ffmpeg</code>.</p>
+<p class="lead">Сервер Antresol — один исполняемый файл с веб-интерфейсом внутри. Нужен компьютер или NAS, который включён, когда вы смотрите, и <code>ffmpeg</code>.</p>
 <h2>Docker (рекомендуется)</h2>
-<pre>docker run -d --name lumen --restart unless-stopped \
+<pre>docker run -d --name antresol --restart unless-stopped \
   -p 8420:8420 \
   -v /путь/к/config:/config \
   -v /путь/к/медиатеке:/media \
   -e VAULT_MEDIA_ROOT=/media \
-  ghcr.io/sidun-av/lumen-server:latest</pre>
+  ghcr.io/sidun-av/antresol-server:latest</pre>
 <p>Образ для <code>linux/amd64</code> и <code>linux/arm64</code>, <code>ffmpeg</code> уже внутри.</p>
 <h2>Готовый файл</h2>
-<p>Скачайте архив для своей системы на <a href="https://github.com/sidun-av/lumen/releases/latest">странице выпусков</a> (Linux x86-64 и ARM64, macOS Apple Silicon и Intel), установите <code>ffmpeg</code> и запустите:</p>
-<pre>VAULT_DATA_DIR=~/lumen/config VAULT_MEDIA_ROOT=~/lumen ./lumen-server</pre>
-<p class="muted">На macOS файл пока не подписан: перед первым запуском выполните <code>xattr -d com.apple.quarantine lumen-server</code>.</p>
+<p>Скачайте архив для своей системы на <a href="https://github.com/sidun-av/antresol/releases/latest">странице выпусков</a> (Linux x86-64 и ARM64, macOS Apple Silicon и Intel), установите <code>ffmpeg</code> и запустите:</p>
+<pre>VAULT_DATA_DIR=~/antresol/config VAULT_MEDIA_ROOT=~/antresol ./antresol-server</pre>
+<p class="muted">На macOS файл пока не подписан: перед первым запуском выполните <code>xattr -d com.apple.quarantine antresol-server</code>.</p>
 <h2>Первый запуск</h2>
 <ol>
 <li>Откройте <code>http://&lt;адрес-компьютера&gt;:8420</code> в браузере и создайте администратора.</li>
@@ -29,7 +29,7 @@
 <tr><td><code>media/books/audiobooks/</code></td><td>аудиокниги, одна папка на книгу</td></tr>
 <tr><td><code>media/books/manga/</code></td><td>комиксы и манга CBZ</td></tr></table></li>
 <li>Создайте профили для семьи. Детским профилям задайте возрастное ограничение.</li>
-<li>Установите приложение Lumen на iPhone, iPad или Mac и введите адрес сервера.</li>
+<li>Установите приложение Antresol на iPhone, iPad или Mac и введите адрес сервера.</li>
 </ol>
 <h2>Основные настройки</h2>
 <table>
@@ -42,7 +42,7 @@
 <p class="muted">Для доступа из интернета используйте https через обратный прокси или VPN (например, Tailscale). Добавляйте в медиатеку только файлы, на которые у вас есть права.</p>
 <p class="muted">Лицензии сторонних компонентов — в файле <code>THIRD_PARTY_LICENSES.md</code> в каждом архиве.</p>
 <div class="en" id="en"><h2>In English</h2>
-<p>The Lumen server is a single executable with the web UI built in. Run it with Docker (<code>ghcr.io/sidun-av/lumen-server</code>, linux/amd64 and arm64, ffmpeg included) or download a binary for Linux or macOS from the <a href="https://github.com/sidun-av/lumen/releases/latest">releases page</a> and install ffmpeg. Open <code>http://&lt;host&gt;:8420</code>, create the administrator, put your files into <code>media/movies/</code>, <code>media/series/</code>, <code>media/music/</code>, <code>media/books/ebooks/</code>, <code>media/books/audiobooks/</code> and <code>media/books/manga/</code> under <code>VAULT_MEDIA_ROOT</code>, create profiles, then enter the server address in the Lumen app. Only add files you have the rights to.</p></div>
+<p>The Antresol server is a single executable with the web UI built in. Run it with Docker (<code>ghcr.io/sidun-av/antresol-server</code>, linux/amd64 and arm64, ffmpeg included) or download a binary for Linux or macOS from the <a href="https://github.com/sidun-av/antresol/releases/latest">releases page</a> and install ffmpeg. Open <code>http://&lt;host&gt;:8420</code>, create the administrator, put your files into <code>media/movies/</code>, <code>media/series/</code>, <code>media/music/</code>, <code>media/books/ebooks/</code>, <code>media/books/audiobooks/</code> and <code>media/books/manga/</code> under <code>VAULT_MEDIA_ROOT</code>, create profiles, then enter the server address in the Antresol app. Only add files you have the rights to.</p></div>
 </main>
-<footer>© 2026 Aleksandr Sidun · Lumen — приложение и сервер для вашей собственной медиатеки. Контент не предоставляется. · <a href="https://github.com/sidun-av/lumen/issues">Связаться</a></footer>
+<footer>© 2026 Aleksandr Sidun · Antresol — приложение и сервер для вашей собственной медиатеки. Контент не предоставляется. · <a href="https://github.com/sidun-av/antresol/issues">Связаться</a></footer>
 </body></html>
