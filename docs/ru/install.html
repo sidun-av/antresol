@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Установка сервера — Antresol</title><meta name="description" content="Как установить сервер Antresol: Docker или готовый файл.">
+<link rel="alternate" hreflang="en" href="https://sidun-av.github.io/antresol/install.html"><link rel="alternate" hreflang="ru" href="https://sidun-av.github.io/antresol/ru/install.html">
+<link rel="stylesheet" href="../style.css"></head>
+<body><header><a class="brand" href="index.html">Antresol</a><nav><a href="install.html" aria-current="page">Установка</a><a href="support.html">Поддержка</a><a href="privacy.html">Конфиденциальность</a><a class="lang" href="../install.html" hreflang="en" lang="en">English</a></nav></header>
+<main>
+<h1>Установка сервера</h1>
+<p class="lead">Сервер Antresol — один исполняемый файл с веб-интерфейсом внутри. Нужен компьютер или NAS, который включён, когда вы смотрите, и <code>ffmpeg</code>.</p>
+<h2>Docker (рекомендуется)</h2>
+<pre>docker run -d --name antresol --restart unless-stopped \
+  -p 8420:8420 \
+  -v /путь/к/config:/config \
+  -v /путь/к/медиатеке:/media \
+  -e VAULT_MEDIA_ROOT=/media \
+  ghcr.io/sidun-av/antresol-server:latest</pre>
+<p>Образ для <code>linux/amd64</code> и <code>linux/arm64</code>, <code>ffmpeg</code> уже внутри.</p>
+<h2>Готовый файл</h2>
+<p>Скачайте архив для своей системы на <a href="https://github.com/sidun-av/antresol/releases/latest">странице выпусков</a> (Linux x86-64 и ARM64, macOS Apple Silicon и Intel), установите <code>ffmpeg</code> и запустите:</p>
+<pre>VAULT_DATA_DIR=~/antresol/config VAULT_MEDIA_ROOT=~/antresol ./antresol-server</pre>
+<p class="muted">На macOS файл пока не подписан: перед первым запуском выполните <code>xattr -d com.apple.quarantine antresol-server</code>.</p>
+<h2>Первый запуск</h2>
+<ol>
+<li>Откройте <code>http://&lt;адрес-компьютера&gt;:8420</code> в браузере и создайте администратора.</li>
+<li>Разложите файлы по папкам внутри <code>VAULT_MEDIA_ROOT</code>:
+<table><tr><th>Папка</th><th>Что</th></tr>
+<tr><td><code>media/movies/</code></td><td>фильмы, одна папка на фильм</td></tr>
+<tr><td><code>media/series/</code></td><td>сериалы: <code>Название/Season 01/…S01E01…</code></td></tr>
+<tr><td><code>media/music/</code></td><td>музыка: <code>Исполнитель/Альбом/</code></td></tr>
+<tr><td><code>media/books/ebooks/</code></td><td>книги EPUB, FB2, PDF</td></tr>
+<tr><td><code>media/books/audiobooks/</code></td><td>аудиокниги, одна папка на книгу</td></tr>
+<tr><td><code>media/books/manga/</code></td><td>комиксы и манга CBZ</td></tr></table></li>
+<li>Создайте профили для семьи. Детским профилям задайте возрастное ограничение.</li>
+<li>Установите приложение Antresol на iPhone, iPad или Mac и введите адрес сервера.</li>
+</ol>
+<h2>Основные настройки</h2>
+<table>
+<tr><td><code>VAULT_DATA_DIR</code></td><td>база и настройки сервера</td></tr>
+<tr><td><code>VAULT_MEDIA_ROOT</code></td><td>корень медиатеки</td></tr>
+<tr><td><code>VAULT_LISTEN</code></td><td>адрес и порт, по умолчанию <code>:8420</code></td></tr>
+<tr><td><code>VAULT_PUBLIC_URL</code></td><td>https-адрес сервера в интернете, если он есть</td></tr>
+<tr><td><code>VAULT_TMDB_KEY</code></td><td>ключ The Movie Database для обложек и описаний (необязательно)</td></tr>
+</table>
+<p class="muted">Для доступа из интернета используйте https через обратный прокси или VPN (например, Tailscale). Добавляйте в медиатеку только файлы, на которые у вас есть права.</p>
+<p class="muted">Лицензии сторонних компонентов — в файле <code>THIRD_PARTY_LICENSES.md</code> в каждом архиве.</p>
+</main>
+<footer>© 2026 Aleksandr Sidun · Antresol — приложение и сервер для вашей собственной медиатеки. Контент не предоставляется. · <a href="https://github.com/sidun-av/antresol">GitHub</a> · <a href="https://github.com/sidun-av/antresol/issues">Связаться</a></footer>
+</body></html>
