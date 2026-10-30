@@ -2,7 +2,7 @@
 
 **English** · [Русский](README.ru.md)
 
-Antresol is a self-hosted home media server and a player app for iPhone, iPad and Mac. It organises and plays the films, TV shows, music, books, audiobooks and comics you keep on your own computer or NAS, in one library designed in the Apple style. No content is provided.
+Antresol is a self-hosted home media server and a player app for iPhone, iPad and Mac. It organises and plays the films, TV shows, music, books, audiobooks and comics you keep on your own computer or NAS, in one clean, native library. No content is provided.
 
 - Website: https://sidun-av.github.io/antresol/
 - Install guide: https://sidun-av.github.io/antresol/install.html
@@ -13,7 +13,7 @@ Antresol is a self-hosted home media server and a player app for iPhone, iPad an
 
 - **Films and TV shows** — pick up where you left off, Picture in Picture, AirPlay, subtitles and audio tracks, quality that adapts to the network.
 - **Music** — albums, artists, playlists, favourites and lyrics; background playback.
-- **Books and comics** — EPUB, FB2, MOBI, PDF and CBZ, with themes, contents, search and bookmarks.
+- **Books and comics** — EPUB, FB2, MOBI/AZW3 (DRM-free), PDF and CBZ, with themes, contents, search and bookmarks.
 - **Audiobooks** — chapters, speed, sleep timer; the position syncs across devices.
 - **Offline** — save a film, an album or a book to the device before a trip.
 - **Family** — profiles with passwords and kid profiles with age limits.
@@ -49,14 +49,14 @@ On macOS the binary is not signed yet: before the first run, execute `xattr -d c
 ## First run
 
 1. Open `http://<computer-address>:8420` in a browser and create the administrator.
-2. Put your files into folders inside `VAULT_MEDIA_ROOT`:
+2. Put your files into these folders inside `VAULT_MEDIA_ROOT` (with Docker, inside the folder you mount as `/media`, for example `/path/to/library/media/movies/`):
 
    | Folder | Contents |
    |---|---|
    | `media/movies/` | films, one folder per film |
    | `media/series/` | TV shows: `Title/Season 01/…S01E01…` |
    | `media/music/` | music: `Artist/Album/` |
-   | `media/books/ebooks/` | EPUB, FB2 and PDF books |
+   | `media/books/ebooks/` | EPUB, FB2, MOBI/AZW3 and PDF books |
    | `media/books/audiobooks/` | audiobooks, one folder per book |
    | `media/books/manga/` | comics and manga in CBZ |
 
